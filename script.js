@@ -5,23 +5,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     dropdownCards.forEach(card => {
         const title = card.querySelector('h3');
+        const content = card.querySelector('.dropdown-content');
+        
         title.addEventListener('click', () => {
-            // Toggle active class
+            // Toggle active class with animation
             card.classList.toggle('active');
-
-            // Change image
+            
+            // Change image with animation
             const imageSrc = card.dataset.image;
             const section = card.closest('section');
-            if (section.id === 'about') {
-                aboutImage.src = imageSrc;
-            } else if (section.id === 'hobbies') {
-                hobbiesImage.src = imageSrc;
-            }
+            const imageElement = section.id === 'about' ? aboutImage : hobbiesImage;
+            
+            imageElement.style.opacity = '0';
+            imageElement.style.transform = 'scale(0.95)';
+            
+            setTimeout(() => {
+                imageElement.src = imageSrc;
+                imageElement.style.opacity = '1';
+                imageElement.style.transform = 'scale(1)';
+            }, 300);
 
             // Close other dropdowns in the same section
             const siblingCards = section.querySelectorAll('.dropdown-card');
             siblingCards.forEach(siblingCard => {
-                if (siblingCard !== card) {
+                if (siblingCard !== card && siblingCard.classList.contains('active')) {
                     siblingCard.classList.remove('active');
                 }
             });
