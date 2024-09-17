@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const aboutImage = document.getElementById("about-image");
   const hobbiesImage = document.getElementById("hobbies-image");
   const dropdownCards = document.querySelectorAll(".dropdown-card");
-
   dropdownCards.forEach((card) => {
     const title = card.querySelector("h3");
     const content = card.querySelector(".dropdown-content");
@@ -74,15 +73,48 @@ document.addEventListener("DOMContentLoaded", () => {
       projectLink: "#",
       githubLink: "#",
     },
+    {
+      title: "Project 3",
+      description: "Description of Project 3",
+      image: "images/project1.jpg",
+      tags: ["hardware", "embedded"],
+      projectLink: "#",
+      githubLink: "#",
+    },
+    {
+      title: "Project 4",
+      description: "Description of Project 4",
+      image: "images/project2.jpg",
+      tags: ["fullstack", "web"],
+      projectLink: "#",
+      githubLink: "#",
+    },
+    {
+      title: "Project 5",
+      description: "Description of Project 5",
+      image: "images/project1.jpg",
+      tags: ["hardware", "embedded"],
+      projectLink: "#",
+      githubLink: "#",
+    },
+    {
+      title: "Project 6",
+      description: "Description of Project 6",
+      image: "images/project2.jpg",
+      tags: ["fullstack", "web"],
+      projectLink: "#",
+      githubLink: "#",
+    },
     // Add more projects...
   ];
 
   const projectsPerPage = 3;
   let currentPage = 1;
   let currentFilter = "all";
+  displayProjects();
+  setupEventListeners();
 
   function displayProjects() {
-    console.log("Displaying projects...");
     const projectGrid = document.getElementById("project-grid");
     projectGrid.innerHTML = "";
 
@@ -96,7 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const pageProjects = filteredProjects.slice(startIndex, endIndex);
 
     pageProjects.forEach((project) => {
-      console.log("Adding project to grid...");
       const projectCard = document.createElement("div");
       projectCard.className = "project-card";
       projectCard.innerHTML = `
@@ -164,9 +195,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     activeBtn.classList.add("active");
   }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    displayProjects();
-    setupEventListeners();
-  });
 });
