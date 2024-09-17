@@ -1,150 +1,207 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>nuhgooyin</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
     <!-- Add this line to include the favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    
-</head>
-<body>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#hobbies">Hobbies</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section id="home" class="full-screen">
-            <div class="background-image" style="background-image: url('images/home_background_image.png');"></div>
-            <div class="content">
-                <h1>Hey, I'm Dan. It's nice to meet you!</h1>
+      <section id="home" class="full-screen">
+        <div
+          class="background-image"
+          style="
+            background-image: url(&quot;images/home_background_image.png&quot;);
+          "
+        ></div>
+        <div class="content">
+          <h1>Hey, I'm Dan. It's nice to meet you!</h1>
+          <h1>FYI this website is a WIP</h1>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>Here are a couple of brief things about me:</h2>
+        <div class="split-container">
+          <div class="image-container">
+            <img
+              id="about-image"
+              src="images/default-profile.jpg"
+              alt="Dan Nguyen"
+            />
+          </div>
+          <div class="content-container">
+            <div class="dropdown-card" data-image="images/skills.jpg">
+              <h3>Technical Skills</h3>
+              <div class="dropdown-content">
+                <p>[List your technical skills here]</p>
+              </div>
             </div>
+            <div class="dropdown-card" data-image="images/work.jpg">
+              <h3>Work Experience</h3>
+              <div class="dropdown-content">
+                <p>
+                  So far, I've worked as a Data Analyst at Definity Financial,
+                  software developer at Savi Finance, etc.
+                </p>
+              </div>
+            </div>
+            <div class="dropdown-card" data-image="images/research.jpg">
+              <h3>Research Experience</h3>
+              <div class="dropdown-content">
+                <p>[Your research experience here]</p>
+              </div>
+            </div>
+            <div
+              class="dropdown-card"
+              data-image="images/education-card-image.png"
+            >
+              <h3>Education</h3>
+              <div class="dropdown-content">
+                <p>
+                  I'm currently specializing in computer science, majoring in
+                  statistics, and minoring in mathematics at the University of
+                  Toronto. So far, I've taken courses in...
+                </p>
+              </div>
+            </div>
+            <div class="dropdown-card" data-image="images/extracurricular.jpg">
+              <h3>Extracurriculars</h3>
+              <div class="dropdown-content">
+                <p>
+                  [Your professional extracurricular activities, like VP
+                  positions, etc.]
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section id="projects">
+          <h2>My Projects</h2>
+          <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="hardware">Hardware</button>
+            <button class="filter-btn" data-filter="fullstack">
+              Full Stack
+            </button>
+            <!-- Add more filter buttons as needed -->
+          </div>
+          <div class="project-grid" id="project-grid">
+            <!-- Projects will be dynamically added here -->
+          </div>
+          <div class="pagination">
+            <button id="prev-page" disabled>Previous</button>
+            <span id="page-info">Page 1 of 1</span>
+            <button id="next-page">Next</button>
+          </div>
         </section>
 
-        <section id="about">
-            <h2>Here are a couple of brief things about me:</h2>
-            <div class="split-container">
-                <div class="image-container">
-                    <img id="about-image" src="images/default-profile.jpg" alt="Dan Nguyen">
-                </div>
-                <div class="content-container">
-                    <div class="dropdown-card" data-image="images/skills.jpg">
-                        <h3>Technical Skills</h3>
-                        <div class="dropdown-content">
-                            <p>[List your technical skills here]</p>
-                        </div>
-                    </div>
-                    <div class="dropdown-card" data-image="images/work.jpg">
-                        <h3>Work Experience</h3>
-                        <div class="dropdown-content">
-                            <p>So far, I've worked as a Data Analyst at Definity Financial, software developer at Savi Finance, etc.</p>
-                        </div>
-                    </div>
-                    <div class="dropdown-card" data-image="images/research.jpg">
-                        <h3>Research Experience</h3>
-                        <div class="dropdown-content">
-                            <p>[Your research experience here]</p>
-                        </div>
-                    </div>
-                    <div class="dropdown-card" data-image="images/education-card-image.png">
-                        <h3>Education</h3>
-                        <div class="dropdown-content">
-                            <p>I'm currently specializing in computer science, majoring in statistics, and minoring in mathematics at the University of Toronto. So far, I've taken courses in...</p>
-                        </div>
-                    </div>
-                    <div class="dropdown-card" data-image="images/extracurricular.jpg">
-                        <h3>Extracurriculars</h3>
-                        <div class="dropdown-content">
-                            <p>[Your professional extracurricular activities, like VP positions, etc.]</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="resume-links">
+          <h3>
+            For more detailed and tailored information, please select the
+            appropriate resume:
+          </h3>
+          <div class="resume-buttons">
+            <a
+              href="files/Dan_Nguyen_Full_Stack_Resume.pdf"
+              class="button resume-button"
+            >
+              <i class="fas fa-code"></i> Full Stack Resume
+            </a>
+            <a
+              href="files/hardware-swe-resume.pdf"
+              class="button resume-button"
+            >
+              <i class="fas fa-microchip"></i> Hardware SWE Resume
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="hobbies">
+        <h2>Things I enjoy doing outside of working and studying!</h2>
+        <div class="split-container">
+          <div class="image-container">
+            <img
+              id="hobbies-image"
+              src="images/default-hobby.jpg"
+              alt="Hobbies"
+            />
+          </div>
+          <div class="content-container">
+            <div class="dropdown-card" data-image="images/badminton.jpg">
+              <h3>Badminton</h3>
+              <div class="dropdown-content">
+                <p>
+                  Typically, I like going for drop-in badminton once a week.
+                </p>
+              </div>
             </div>
-
-            <section id="projects">
-                <h2>My Projects</h2>
-                <div class="project-filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="hardware">Hardware</button>
-                    <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-                    <!-- Add more filter buttons as needed -->
-                </div>
-                <div class="project-grid" id="project-grid">
-                    <!-- Projects will be dynamically added here -->
-                </div>
-                <div class="pagination">
-                    <button id="prev-page" disabled>Previous</button>
-                    <span id="page-info">Page 1 of 1</span>
-                    <button id="next-page">Next</button>
-                </div>
-            </section>
-
-
-            <div class="resume-links">
-                <h3>For more detailed and tailored information, please select the appropriate resume:</h3>
-                <div class="resume-buttons">
-                    <a href="files/Dan_Nguyen_Full_Stack_Resume.pdf" class="button resume-button">
-                        <i class="fas fa-code"></i> Full Stack Resume
-                    </a>
-                    <a href="files/hardware-swe-resume.pdf" class="button resume-button">
-                        <i class="fas fa-microchip"></i> Hardware SWE Resume
-                    </a>
-                </div>
+            <!-- Other hobby cards remain the same -->
+            <div class="dropdown-card" data-image="images/rock-climbing.jpg">
+              <h3>Rock Climbing</h3>
+              <div class="dropdown-content">
+                <p>
+                  Recently I've gotten into rock climbing (although I'm still
+                  very bad at it haha).
+                </p>
+              </div>
             </div>
-        </section>
-
-        <section id="hobbies">
-            <h2>Things I enjoy doing outside of working and studying!</h2>
-            <div class="split-container">
-                <div class="image-container">
-                    <img id="hobbies-image" src="images/default-hobby.jpg" alt="Hobbies">
-                </div>
-                <div class="content-container">
-                    <div class="dropdown-card" data-image="images/badminton.jpg">
-                        <h3>Badminton</h3>
-                        <div class="dropdown-content">
-                            <p>Typically, I like going for drop-in badminton once a week.</p>
-                        </div>
-                    </div>
-                    <!-- Other hobby cards remain the same -->
-                    <div class="dropdown-card" data-image="images/rock-climbing.jpg">
-                        <h3>Rock Climbing</h3>
-                        <div class="dropdown-content">
-                            <p>Recently I've gotten into rock climbing (although I'm still very bad at it haha).</p>
-                        </div>
-                    </div>
-                    <div class="dropdown-card" data-image="images/boxing.jpg">
-                        <h3>Biking</h3>
-                        <div class="dropdown-content">
-                            <p>even though its been tough finding the time to, I still love biking, especially to random places in the middle of nowhere lol</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="dropdown-card" data-image="images/boxing.jpg">
+              <h3>Biking</h3>
+              <div class="dropdown-content">
+                <p>
+                  even though its been tough finding the time to, I still love
+                  biking, especially to random places in the middle of nowhere
+                  lol
+                </p>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section id="contact">
-            <div class="profile-image"></div>
-            <h2>Let's Connect!</h2>
-            <p>But that's enough about me, I'd like to hear more about you! I love meeting new people and can talk about literally anything!</p>
-            <p>Feel free to reach out to me at <a href="mailto:danduy.nguyen@mail.utoronto.ca">danduy.nguyen@mail.utoronto.ca</a>, or on <a href="https://www.linkedin.com/in/nuhgooyin/">LinkedIn</a>!</p>
-        </section>
+      <section id="contact">
+        <div class="profile-image"></div>
+        <h2>Let's Connect!</h2>
+        <p>
+          But that's enough about me, I'd like to hear more about you! I love
+          meeting new people and can talk about literally anything!
+        </p>
+        <p>
+          Feel free to reach out to me at
+          <a href="mailto:danduy.nguyen@mail.utoronto.ca"
+            >danduy.nguyen@mail.utoronto.ca</a
+          >, or on
+          <a href="https://www.linkedin.com/in/nuhgooyin/">LinkedIn</a>!
+        </p>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Dan Nguyen's Portfolio. All rights reserved.</p>
+      <p>&copy; 2024 Dan Nguyen's Portfolio. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
