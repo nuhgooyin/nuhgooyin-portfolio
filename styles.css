@@ -29,7 +29,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #ecf0f1;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -41,6 +41,33 @@ nav ul li a:hover {
 
 main {
     padding-top: 60px;
+}
+
+.full-screen {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/home_background_image.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7);
+    z-index: -1;
+}
+
+.content {
+    z-index: 1;
 }
 
 h1, h2, h3 {
@@ -68,11 +95,7 @@ section {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.image-container img:hover {
-    transform: scale(1.05);
+    transition: all 0.3s ease;
 }
 
 .dropdown-card {
@@ -81,37 +104,28 @@ section {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     margin-bottom: 1rem;
     overflow: hidden;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition: box-shadow 0.3s ease;
 }
 
 .dropdown-card:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    transform: translateY(-5px);
 }
 
 .dropdown-card h3 {
     margin: 0;
     padding: 1rem;
-    background-color: var(--primary-color);
+    background-color: #3498db;
     color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.dropdown-card h3:hover {
-    background-color: #2980b9;
 }
 
 .dropdown-content {
     padding: 1rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+    display: none;
 }
 
 .dropdown-card.active .dropdown-content {
-    max-height: 500px; /* Adjust this value based on your content */
-    padding: 1rem;
+    display: block;
 }
 
 .resume-links {
@@ -160,35 +174,4 @@ footer {
     .image-container, .content-container {
         width: 100%;
     }
-}
-
-.full-screen {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    color: white;
-    text-align: center;
-}
-
-.background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('images/home_background_image.png'); /* Try this first */
-    /* If the above doesn't work, try these alternatives one at a time: */
-    /* background-image: url('../images/home_background_image.png'); */
-    /* background-image: url('/images/home_background_image.png'); */
-    /* background-image: url('home_background_image.png'); */
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.7);
-    z-index: -1;
-}
-
-.content {
-    z-index: 1;
 }

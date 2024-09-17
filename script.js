@@ -30,8 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
             siblingCards.forEach(siblingCard => {
                 if (siblingCard !== card && siblingCard.classList.contains('active')) {
                     siblingCard.classList.remove('active');
+                    siblingCard.querySelector('.dropdown-content').style.maxHeight = '0';
+                    siblingCard.querySelector('.dropdown-content').style.padding = '0 1rem';
                 }
             });
+
+            // Animate the clicked dropdown
+            if (card.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.padding = '1rem';
+            } else {
+                content.style.maxHeight = '0';
+                content.style.padding = '0 1rem';
+            }
         });
     });
 
@@ -44,22 +55,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 behavior: 'smooth'
             });
         });
-    });
-
-    // Handle form submission
-    const contactForm = document.querySelector('.contact-form');
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const message = formData.get('message');
-        
-        // Here you would typically send this data to a server
-        console.log('Form submitted:', { name, email, message });
-        
-        // Clear the form
-        contactForm.reset();
-        alert('Thank you for your message! I will get back to you soon.');
     });
 });
