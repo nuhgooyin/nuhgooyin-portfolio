@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const content = card.querySelector('.dropdown-content');
         
         title.addEventListener('click', () => {
-            // Toggle active class with animation
+            // Toggle active class
             card.classList.toggle('active');
             
             // Change image with animation
@@ -31,17 +31,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (siblingCard !== card && siblingCard.classList.contains('active')) {
                     siblingCard.classList.remove('active');
                     siblingCard.querySelector('.dropdown-content').style.maxHeight = '0';
-                    siblingCard.querySelector('.dropdown-content').style.padding = '0 1rem';
+                    siblingCard.querySelector('.dropdown-content').style.opacity = '0';
                 }
             });
 
             // Animate the clicked dropdown
             if (card.classList.contains('active')) {
                 content.style.maxHeight = content.scrollHeight + 'px';
-                content.style.padding = '1rem';
+                content.style.opacity = '1';
             } else {
                 content.style.maxHeight = '0';
-                content.style.padding = '0 1rem';
+                content.style.opacity = '0';
             }
         });
     });
