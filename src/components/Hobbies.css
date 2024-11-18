@@ -1,0 +1,15 @@
+#hobbies {
+  padding: 50px;
+  background-color: #ffffff;
+}
+
+#hobbies h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#hobbies ul {
+  list-style-type: disc;
+  padding-left: 40px;
+  font-size: 1.1em;
+}

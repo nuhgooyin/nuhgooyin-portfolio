@@ -1,0 +1,30 @@
+#contact {
+  padding: 50px;
+  background-color: #e0e0e0;
+  text-align: center;
+}
+
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+#contact h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#contact p {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+#contact a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
